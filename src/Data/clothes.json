@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Classic White T-Shirt",
+    "category": "Topwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "White",
+    "price": 499,
+    "image": "https://charmgal.in/cdn/shop/files/Roberta8421.jpg?v=1719778274"
+  },
+  {
+    "id": 2,
+    "name": "Denim Jacket",
+    "category": "Outerwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Blue",
+    "price": 1999,
+    "image": "https://www.iconicindia.com/cdn/shop/files/GMS24-3000140436_496c40c8-e5f7-4832-b35f-acd81cb0bed6.jpg?v=1756444222"
+  },
+  {
+    "id": 3,
+    "name": "Slim Fit Jeans",
+    "category": "Bottomwear",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "color": "Black",
+    "price": 1499,
+    "image": "https://cdn04.nnnow.com/web-images/large/styles/C8Y2JTCWIVX/1665382455217/1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Formal Shirt",
+    "category": "Topwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Light Blue",
+    "price": 899,
+    "image": "https://images.unsplash.com/photo-1587469845656-83a9924b49a3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Hoodie",
+    "category": "Winterwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Gray",
+    "price": 1299,
+    "image": "https://images.unsplash.com/photo-1600180758895-29207a8e8566?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Chinos",
+    "category": "Bottomwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Beige",
+    "price": 1399,
+    "image": "https://images.unsplash.com/photo-1580734076652-22c8d2b5932f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Kurta",
+    "category": "Ethnic",
+    "sizes": ["M", "L", "XL"],
+    "color": "Maroon",
+    "price": 1099,
+    "image": "https://images.unsplash.com/photo-1600180714207-52c7a9e1e9a4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Saree",
+    "category": "Ethnic",
+    "sizes": ["Free Size"],
+    "color": "Red",
+    "price": 2499,
+    "image": "https://imagescdn.peterengland.com/img/app/product/3/39831756-19499222.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Track Pants",
+    "category": "Activewear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Navy Blue",
+    "price": 799,
+    "image": "https://images.unsplash.com/photo-1581089781785-04b9e2c0f44d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Leather Jacket",
+    "category": "Outerwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Brown",
+    "price": 3499,
+    "image": "https://images.unsplash.com/photo-1585386959984-a41552207bda?auto=format&fit=crop&w=600&q=80"
+  },
+   {
+    "id": 1,
+    "name": "Classic White T-Shirt",
+    "category": "Topwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "White",
+    "price": 499,
+    "image": "https://charmgal.in/cdn/shop/files/Roberta8421.jpg?v=1719778274"
+  },
+  {
+    "id": 2,
+    "name": "Denim Jacket",
+    "category": "Outerwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Blue",
+    "price": 1999,
+    "image": "https://www.iconicindia.com/cdn/shop/files/GMS24-3000140436_496c40c8-e5f7-4832-b35f-acd81cb0bed6.jpg?v=1756444222"
+  },
+  {
+    "id": 3,
+    "name": "Slim Fit Jeans",
+    "category": "Bottomwear",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "color": "Black",
+    "price": 1499,
+    "image": "https://cdn04.nnnow.com/web-images/large/styles/C8Y2JTCWIVX/1665382455217/1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Formal Shirt",
+    "category": "Topwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Light Blue",
+    "price": 899,
+    "image": "https://images.unsplash.com/photo-1587469845656-83a9924b49a3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Hoodie",
+    "category": "Winterwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Gray",
+    "price": 1299,
+    "image": "https://images.unsplash.com/photo-1600180758895-29207a8e8566?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 6,
+    "name": "Chinos",
+    "category": "Bottomwear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Beige",
+    "price": 1399,
+    "image": "https://images.unsplash.com/photo-1580734076652-22c8d2b5932f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 7,
+    "name": "Kurta",
+    "category": "Ethnic",
+    "sizes": ["M", "L", "XL"],
+    "color": "Maroon",
+    "price": 1099,
+    "image": "https://images.unsplash.com/photo-1600180714207-52c7a9e1e9a4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 8,
+    "name": "Saree",
+    "category": "Ethnic",
+    "sizes": ["Free Size"],
+    "color": "Red",
+    "price": 2499,
+    "image": "https://imagescdn.peterengland.com/img/app/product/3/39831756-19499222.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Track Pants",
+    "category": "Activewear",
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Navy Blue",
+    "price": 799,
+    "image": "https://images.unsplash.com/photo-1581089781785-04b9e2c0f44d?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 10,
+    "name": "Leather Jacket",
+    "category": "Outerwear",
+    "sizes": ["M", "L", "XL"],
+    "color": "Brown",
+    "price": 3499,
+    "image": "https://images.unsplash.com/photo-1585386959984-a41552207bda?auto=format&fit=crop&w=600&q=80"
+  }
+]
