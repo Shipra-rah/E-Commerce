@@ -26,6 +26,7 @@ export default function Order() {
     setOrders(updated);
     localStorage.setItem("orders", JSON.stringify(updated));
   };
+  // order page
 
   return (
     <div
