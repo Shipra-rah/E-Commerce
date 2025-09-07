@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import CartPage from "./Pages/CartPage";
 import CardFullDetails from "./Data/CardFullDetails";
 import LoginLayout from "./Pages/LoginLayout";
+import About from "./Pages/About";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function Layout() {
         <Route path="/cart" element={<CartPage />} /> 
         <Route path="/product/:id" element={<CardFullDetails />} />
         <Route path="/login/*" element={<LoginLayout />} />
+        <Route path="/about" element={<About />} />
         <Route path="/register" element={<div>Register Page</div>} />
 
         {/* fallback route to handle unknown paths */}

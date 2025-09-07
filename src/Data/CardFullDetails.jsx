@@ -23,10 +23,8 @@ export default function CardFullDetails({ products, onClick }) {
 
   const handleClick = (e) => {
     e.stopPropagation();
-    addToCart(product);
-
     setIsAdded(true);
-
+    addToCart(product);
     setTimeout(() => {
       setIsAdded(false);
     }, 1500);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoFilter } from "react-icons/io5";
 
 const sizes = ["S", "M", "L", "XL", "XXL"];
 const prices = ["100", "500", "1000", "1500-above"];
@@ -18,8 +19,8 @@ export default function Sidebar() {
   return (
     <div className="h-auto w-3/12 hidden lg:block bg-white shadow-sm flex-col items-start px-8 py-6">
       {/* Filter Header */}
-      <div className="px-4 py-2 bg-black text-white rounded-xl text-sm font-semibold mb-6">
-        Filter
+      <div className="px-4 py-2 bg-black flex justify-start items-center gap-[10%]   text-white rounded-xl text-sm font-semibold mb-6">
+       <IoFilter /> Filter
       </div>
 
       {/* Size Filter */}
