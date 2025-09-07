@@ -1,4 +1,10 @@
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import Navbar from "./Componants/Navbar";
 import Footer from "./Componants/Footer";
 import Home from "./Pages/Home";
@@ -6,6 +12,9 @@ import CartPage from "./Pages/CartPage";
 import CardFullDetails from "./Data/CardFullDetails";
 import LoginLayout from "./Pages/LoginLayout";
 import About from "./Pages/About";
+import CheckoutPage from "./Pages/CheckoutPage";
+import Order from "./Pages/Order"
+import OrderConfirmation from "./Pages/OrderConfirmationPage";
 
 function App() {
   return (
@@ -29,14 +38,14 @@ function Layout() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<CartPage />} /> 
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/product/:id" element={<CardFullDetails />} />
         <Route path="/login/*" element={<LoginLayout />} />
+        <Route path="/order" element={<Order />} />
         <Route path="/about" element={<About />} />
-        <Route path="/register" element={<div>Register Page</div>} />
-
-        {/* fallback route to handle unknown paths */}
         <Route path="*" element={<Navigate to="/" />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/orderConfirmation" element={<OrderConfirmation />} />
       </Routes>
 
       {!hideLayout && <Footer />}

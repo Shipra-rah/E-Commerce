@@ -1,4 +1,5 @@
 import React from "react";
+import Aboutimg from "../assets/About.jpg";
 
 const About = () => {
   return (
@@ -14,11 +15,11 @@ const About = () => {
       </section>
 
       {/* Who We Are */}
-      <section className="max-w-5xl grid md:grid-cols-2 gap-10 items-center mb-16">
+      <section className="max-w-5xl grid md:grid-cols-2 gap-10 items-center justify-center mb-16">
         <img
-          src="https://via.placeholder.com/500x350?text=Our+Story"
+          src={Aboutimg}
           alt="Our Story"
-          className="rounded-2xl shadow-md"
+          className="rounded-2xl max-h-96 shadow-md"
         />
         <div>
           <h2 className="text-2xl font-semibold mb-3">Who We Are</h2>

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Data from "../Data/clothes.json";
 import CartContext from "../Contexts/CartContext";
 
-export default function CardFullDetails({ products, onClick }) {
+export default function CardFullDetails() {
   const { addToCart } = useContext(CartContext);
   const [isAdded, setIsAdded] = useState(false);
   const { id } = useParams();

@@ -1,10 +1,11 @@
-import React, { useContext ,useState } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import CartContext from "../Contexts/CartContext";
-
 
 function DataCard({ products, onClick }) {
   const { addToCart } = useContext(CartContext);
-   const [isAdded, setIsAdded] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.stopPropagation();
@@ -126,6 +127,21 @@ function DataCard({ products, onClick }) {
           `}
         >
           {isAdded ? "Item Added" : "Add to Cart"}
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate("/Checkout", { state: { product: products } });
+          }}
+          className="
+            px-4 py-2
+            text-white
+            bg-green-600
+            rounded-lg
+            hover:bg-green-700 transition
+          "
+        >
+          Buy Now
         </button>
       </div>
     </div>
