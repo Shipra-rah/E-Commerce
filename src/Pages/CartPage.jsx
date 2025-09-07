@@ -1,39 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
+import CartContext from "../Contexts/CartContext";
 
 export default function CartPage() {
-  // Sample cart data (normally you’d fetch this from context or API)
-  const [cart, setCart] = useState([
-    { id: 1, name: "T-Shirt", price: 500, qty: 1, image: "/images/tshirt.jpg" },
-    { id: 2, name: "Jeans", price: 1200, qty: 2, image: "/images/jeans.jpg" },
-  ]);
-
-  // Update quantity
-  const updateQuantity = (id, newQty) => {
-    if (newQty < 1) return;
-    setCart(
-      cart.map((item) =>
-        item.id === id ? { ...item, qty: newQty } : item
-      )
-    );
-  };
-
-  // Remove item
-  const removeItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
-  };
-
-  // Calculate total
-  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const { cart, updateQuantity, removeItem, total } = useContext(CartContext);
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
       <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
 
       {cart.length === 0 ? (
-        <p className="text-gray-500 text-center">Your cart is empty.</p>
+        <p className="h-96 flex justify-center items-center text-gray-500 text-center">Your cart is empty.</p>
       ) : (
-        <div className="space-y-6">
+        <div className=" min-h-screen space-y-6">
           {cart.map((item) => (
             <div
               key={item.id}
