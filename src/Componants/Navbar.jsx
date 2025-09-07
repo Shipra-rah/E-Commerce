@@ -55,7 +55,7 @@ export default function Navbar() {
           <button onClick={() => navigate("/winter")} className="hover:text-gray-300"> Winter  </button>
           <button onClick={() => navigate("/summer")} className="hover:text-gray-300"> Summer  </button>
           <button onClick={() => navigate("/about")} className="hover:text-gray-300">   About </button>
-          <button onClick={() => navigate("/contact")} className="hover:text-gray-300"> Contac   </button>
+          <button onClick={() => navigate("/contact")} className="hover:text-gray-300"> Contact   </button>
         </div>
 
         {/* Search & Profile & Cart */}
