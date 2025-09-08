@@ -123,13 +123,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 text-gray-100 px-6 py-4 space-y-3 text-sm uppercase font-medium">
+        <div className="md:hidden bg-gray-800 text-gray-100  space-y-0.5 text-sm uppercase font-medium">
           {["Collections", "Man", "Woman", "Kids", "About","Order", "Cart", "Login"].map(
             (item) => (
               <button
                 key={item}
                 onClick={() => navigate(`/${item.toLowerCase()}`)}
-                className="block w-full text-left hover:text-cyan-400 transition"
+                className="block w-full text-left px-5 py-1  hover:bg-cyan-600 hover:text-white transition"
               >
                 {item}
               </button>
