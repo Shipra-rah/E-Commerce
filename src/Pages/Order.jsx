@@ -135,6 +135,27 @@ export default function Order() {
                     Date: {order.date}
                   </p>
                   <p
+                    className="
+                      text-sm
+                    "
+                  >
+                    Customer: {order.customer?.name || "N/A"}
+                  </p>
+                  <p
+                    className="
+                      text-sm
+                    "
+                  >
+                    Address: {order.customer?.address || "N/A"}
+                  </p>
+                  <p
+                    className="
+                      text-sm
+                    "
+                  >
+                    Phone: {order.customer?.phone || "N/A"}
+                  </p>
+                  <p
                     className={`
                       text-sm font-semibold
                       ${

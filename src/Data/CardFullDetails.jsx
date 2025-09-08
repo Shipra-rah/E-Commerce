@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Data from "../Data/clothes.json";
 import CartContext from "../Contexts/CartContext";
 
-export default function CardFullDetails() {
+export default function CardFullDetails({ products, onClick }) {
   const { addToCart } = useContext(CartContext);
   const [isAdded, setIsAdded] = useState(false);
   const { id } = useParams();
@@ -28,6 +28,11 @@ export default function CardFullDetails() {
     setTimeout(() => {
       setIsAdded(false);
     }, 1500);
+  };
+
+  const handleBuyNow = (e) => {
+    e.stopPropagation();
+    navigate("/checkout", { state: { product: product } });
   };
 
   return (
@@ -215,7 +220,7 @@ export default function CardFullDetails() {
               {isAdded ? "Item Added" : "Add to Cart"}
             </button>
             <button
-              onClick={() => alert(`Buying ${product.name}`)}
+              onClick={handleBuyNow}
               className="
                 px-4 py-2
                 text-black

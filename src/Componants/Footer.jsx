@@ -1,11 +1,12 @@
+import Logo from "./Logo";
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 rounded-tr-full">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo & Description */}
-        <div>
-          <h2 className="text-2xl font-bold tracking-wide">ShopName</h2>
+        <div className="flex-1">
+          <h2 className=" flex justify-start"> <Logo/></h2>
           <p className="text-gray-400 mt-3 text-sm">
             Premium products with the best quality. Elevate your lifestyle with us.
           </p>
@@ -60,7 +61,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} ShopName. All rights reserved.
+        © {new Date().getFullYear()} SX. All rights reserved.
       </div>
     </footer>
   );

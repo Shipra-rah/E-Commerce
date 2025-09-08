@@ -124,7 +124,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 text-gray-100 px-6 py-4 space-y-3 text-sm uppercase font-medium">
-          {["Collections", "Man", "Woman", "Kids", "About", "Cart", "Login"].map(
+          {["Collections", "Man", "Woman", "Kids", "About","Order", "Cart", "Login"].map(
             (item) => (
               <button
                 key={item}
