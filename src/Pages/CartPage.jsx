@@ -1,9 +1,19 @@
 import React, { useContext } from "react";
 import { FaTrash } from "react-icons/fa";
 import CartContext from "../Contexts/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
   const { cart, updateQuantity, removeItem, total } = useContext(CartContext);
+  const navigate = useNavigate();
+
+  const handleItemClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
+  const handleProceedToCheckout = () => {
+    navigate("/checkout", { state: { cart } });
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10">
@@ -16,7 +26,8 @@ export default function CartPage() {
           {cart.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between bg-white p-4 rounded-xl shadow"
+              onClick={() => handleItemClick(item.id)}
+              className="flex cursor-pointer items-center justify-between bg-white p-4 rounded-xl shadow"
             >
               {/* Image + Name */}
               <div className="flex items-center space-x-4">
@@ -34,14 +45,20 @@ export default function CartPage() {
               {/* Quantity Controls */}
               <div className="flex items-center space-x-3">
                 <button
-                  onClick={() => updateQuantity(item.id, item.qty - 1)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    updateQuantity(item.id, item.qty - 1);
+                  }}
                   className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                 >
                   -
                 </button>
                 <span className="px-3">{item.qty}</span>
                 <button
-                  onClick={() => updateQuantity(item.id, item.qty + 1)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    updateQuantity(item.id, item.qty + 1);
+                  }}
                   className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300"
                 >
                   +
@@ -52,7 +69,10 @@ export default function CartPage() {
               <div className="flex items-center space-x-4">
                 <p className="font-semibold">₹{item.price * item.qty}</p>
                 <button
-                  onClick={() => removeItem(item.id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    removeItem(item.id);
+                  }}
                   className="text-red-500 hover:text-red-700"
                 >
                   <FaTrash />
@@ -68,7 +88,10 @@ export default function CartPage() {
           </div>
 
           {/* Checkout Button */}
-          <button className="w-full py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition">
+          <button
+            onClick={handleProceedToCheckout}
+            className="w-full py-3 bg-black text-white rounded-xl hover:bg-gray-800 transition"
+          >
             Proceed to Checkout
           </button>
         </div>

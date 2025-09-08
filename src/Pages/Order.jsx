@@ -118,14 +118,14 @@ export default function Order() {
                       text-gray-500
                     "
                   >
-                    ₹{order.product.price}
+                    ₹{order.product.price} x {order.qty || 1}
                   </p>
                   <p
                     className="
                       text-sm
                     "
                   >
-                    Qty: 1
+                    Subtotal: ₹{order.product.price * (order.qty || 1)}
                   </p>
                   <p
                     className="
