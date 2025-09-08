@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
@@ -9,13 +9,23 @@ import Logo from "./Logo";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const timeoutId = useRef(null); // persist timeout between renders
   const navigate = useNavigate();
+
+  const handleMouseEnter = () => {
+    clearTimeout(timeoutId.current);
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutId.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // 2s delay
+  };
 
   return (
     <nav className="shadow-md border-b bg-gray-900 text-gray-100 sticky top-0 z-50 font-[Orbitron]">
-      
       <div className="flex items-center justify-between h-16 px-6 md:px-12">
-
         {/* Logo */}
         <div
           onClick={() => navigate("/")}
@@ -26,32 +36,30 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 text-sm tracking-wide uppercase">
-          
           {/* Dropdown */}
           <div
-            className="relative cursor-pointer group"
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            <div className="flex items-center space-x-1 hover:text-cyan-400 transition-colors duration-300">
+            <div className="flex items-center space-x-1 hover:text-cyan-400 transition cursor-pointer">
               <span>Collections</span>
               <IoIosArrowDown
-                className={`transform transition-transform duration-300 ${
-                  isDropdownOpen ? "rotate-180 text-cyan-400" : "rotate-0"
+                className={`transition-transform duration-300 ${
+                  isDropdownOpen ? "rotate-180" : ""
                 }`}
               />
             </div>
 
-            {/* Dropdown Menu */}
             {isDropdownOpen && (
-              <div className="absolute mt-3 bg-gray-800 text-gray-200 shadow-xl rounded-xl py-2 w-44 animate-fade-in">
+              <div className="absolute left-0 mt-3 bg-gray-800 text-gray-200 shadow-xl rounded-xl py-2 w-44">
                 {["Winter", "Summer", "New Arrivals"].map((item) => (
                   <p
                     key={item}
                     onClick={() =>
                       navigate(`/collections/${item.toLowerCase().replace(" ", "")}`)
                     }
-                    className="px-4 py-2 hover:bg-gray-700 hover:text-cyan-400 transition-colors duration-300 cursor-pointer"
+                    className="px-4 py-2 hover:bg-gray-700 hover:text-cyan-400 cursor-pointer"
                   >
                     {item}
                   </p>
@@ -60,19 +68,14 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Menu Items with Underline */}
-          {["Home","Man", "Female", "Kids", "About"].map((item) => (
+          {/* Other Menu Items */}
+          {["Home", "Man", "Female", "Kids", "About"].map((item) => (
             <button
               key={item}
-              value={item}
               onClick={() => {
-                if (item === "Home") {
-                  navigate("/");
-                } else if (item === "About") {
-                  navigate("/about");
-                } else {
-                  navigate(`/?menu=${item.toLowerCase()}`);
-                }
+                if (item === "Home") navigate("/");
+                else if (item === "About") navigate("/about");
+                else navigate(`/collections/${item.toLowerCase()}`);
               }}
               className="relative group cursor-pointer"
             >
@@ -84,22 +87,17 @@ export default function Navbar() {
 
         {/* Right Section */}
         <div className="hidden md:flex items-center space-x-8 text-xl">
-          {/* Orders */}
           <Link to="/order">
             <span className="cursor-pointer hover:text-cyan-400 text-xs flex flex-col leading-tight text-center">
               <span>Return</span>
               <span>&Order</span>
             </span>
           </Link>
-
-          {/* Cart */}
-          <Link to="/Cart">
-            <FaShoppingCart className="cursor-pointer hover:text-cyan-400 transition-colors duration-300" />
+          <Link to="/cart">
+            <FaShoppingCart className="cursor-pointer hover:text-cyan-400 transition" />
           </Link>
-
-          {/* Login */}
-          <Link to="/Login">
-            <RiAccountCircleLine className="cursor-pointer text-3xl hover:text-cyan-400 transition-colors duration-300" />
+          <Link to="/login">
+            <RiAccountCircleLine className="cursor-pointer text-3xl hover:text-cyan-400 transition" />
           </Link>
         </div>
 
@@ -125,13 +123,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 text-gray-100 px-6 py-4 space-y-3 text-sm uppercase font-medium animate-fade-in">
+        <div className="md:hidden bg-gray-800 text-gray-100 px-6 py-4 space-y-3 text-sm uppercase font-medium">
           {["Collections", "Man", "Woman", "Kids", "About", "Cart", "Login"].map(
             (item) => (
               <button
                 key={item}
                 onClick={() => navigate(`/${item.toLowerCase()}`)}
-                className="block w-full text-left hover:text-cyan-400 transition-colors duration-300"
+                className="block w-full text-left hover:text-cyan-400 transition"
               >
                 {item}
               </button>

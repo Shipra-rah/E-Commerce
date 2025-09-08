@@ -13,6 +13,7 @@ import Footer from "./Componants/Footer";
 
 // Pages
 import Home from "./Pages/Home";
+import AllHome from "./Pages/AllHome";
 import CartPage from "./Pages/CartPage";
 import CardFullDetails from "./Data/CardFullDetails";
 import LoginLayout from "./Pages/LoginLayout";
@@ -45,6 +46,7 @@ function Layout() {
       <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/collections/:collection" element={<AllHome />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/product/:id" element={<CardFullDetails />} />
           <Route path="/login/*" element={<LoginLayout />} />

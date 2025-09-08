@@ -1,18 +1,18 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Header from "../Componants/Header";
 import Footer from "../Componants/Footer";
 import Sidebar from "../Componants/Sidebar";
 import Content from "../Componants/Content";
 import SearchProvider from "../Contexts/SearchProvider";
 
-function Home() {
-  const [searchParams] = useSearchParams();
-
+function AllHome() {
+  const { collection } = useParams();
+  const menu = collection ;
 
   return (
     <SearchProvider>
-      <Header menu={""} />
+      <Header menu={menu} />
       <div  className=" flex  px-6 justify-center " >
         <Sidebar />
         <Content />
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default AllHome;

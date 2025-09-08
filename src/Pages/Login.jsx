@@ -20,8 +20,8 @@ export default function Login() {
     };
 
     return (
-        <div className="min-h-screen  flex items-center justify-center bg-gray-50">
-            <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
+        <div className="min-h-screen  flex items-center justify-center bg-[url('/Wallpaper.jpeg')] bg-cover bg-center">
+            <div className="w-full max-w-md bg-white/80 filter filter-blur rounded-2xl shadow-lg p-8">
                 <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
                     Login
                 </h2>
